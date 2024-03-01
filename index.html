@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="blur"></div>
+    <div class="gameOver">
+      <h1>Game Over</h1>
+      <div id="stats">
+        <div>
+          <p>Score</p>
+          <p>Level</p>
+        </div>
+        <div>
+          <p class="score">0</p>
+          <p class="level">0</p>
+        </div>
+      </div>
+      <div>
+        <button><h1>Restart</h1></button>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="leftBar">
+        <h1>Game Tips</h1>
+        <div class="tips">
+          <div>
+            <p><b>ESC</b></p>
+            <p><b>< ></b></p>
+            <p><b>/\</b></p>
+            <p><b>Space</b></p>
+          </div>
+          <div>
+            <p><b>- stop/resume </b></p>
+            <p><b>- move figures</b></p>
+            <p><b>- rotate figure</b></p>
+            <p><b>- quick drop</b></p>
+          </div>
+        </div>
+      </div>
+      <div class="playField"></div>
+      <div class="rightBar">
+        <h1>Game Info</h1>
+        <div class="score">
+          <h1>Score</h1>
+          <h2>0</h2>
+        </div>
+        <div class="hi_score">
+          <h1>Hi-Score</h1>
+          <h2>0</h2>
+        </div>
+        <div class="next_figure">
+          <h1>Next</h1>
+          <h2>-not yet-</h2>
+        </div>
+        <div class="level">
+          <h1>Level</h1>
+          <h2>1</h2>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./scripts/gameLoop.js"></script>
+  </body>
+</html>
