@@ -29,16 +29,15 @@ export function renderStaticFigure(
   );
 }
 
-export function generatePlayField(rows, colums) {
-  let container = document.querySelector(".playField");
+export function generateRenderField(rows, colums, className) {
+  let container = document.querySelector(className);
 
   for (let i = 0; i < colums * rows; i++) {
     const div = document.createElement("div");
-    // div.innerHTML = i;
     container.append(div);
   }
   return transformListToMatrix(
-    document.querySelectorAll(".playField > div"),
+    document.querySelectorAll(`${className} > div`),
     colums
   );
 }
