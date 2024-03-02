@@ -36,6 +36,20 @@ body {
   background-color: rgb(7, 180, 7);
 }
 
+.preview {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 5px;
+  padding: 0.55vh;
+  border: solid rgb(7, 180, 7) 0.25vh;
+  background-color: black;
+}
+
+.preview > div {
+  width: 4vh;
+  height: 4vh;
+}
+
 .gameOver > div {
   margin: 3vh;
 }
@@ -66,7 +80,7 @@ body {
   align-items: center;
   gap: 1vh;
 
-  min-width: 18vw;
+  min-width: 16vw;
   padding: 0.2vw;
   padding-top: 1vh;
   background-color: green;
@@ -101,26 +115,26 @@ body {
   height: 4vh;
 }
 
-.playField > .O {
+.O {
   background-color: yellow;
 }
 
-.playField > .J {
+.J {
   background-color: blue;
 }
 
-.playField > .I {
+.I {
   background-color: slateblue;
 }
-.playField > .S {
+.S {
   background-color: rgb(1, 75, 37);
 }
-.playField > .T {
+.T {
   background-color: rgb(218, 145, 202);
 }
-.playField > .Z {
+.Z {
   background-color: red;
 }
-.playField > .L {
+.L {
   background-color: rgb(153, 135, 34);
 }
