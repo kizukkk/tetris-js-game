@@ -13,12 +13,12 @@ import {
   getCalculatedScore,
 } from "./logic.js";
 import {
-  generatePlayField,
   renderFigure,
   clearDynamicRender,
   clearStaticRender,
   renderStaticFigure,
   updateHtmlContent,
+  generateRenderField,
 } from "./render.js";
 import {
   PLAY_FIELD_ROWS,
@@ -27,6 +27,8 @@ import {
   FIGURE_NAMES,
   FIGURE_CENTER,
   LEVEL_THRESHOLD,
+  PREVIEW_ROWS,
+  PREVIEW_COLUMS,
 } from "./constants.js";
 
 let level = 1;
@@ -36,7 +38,18 @@ let rowsCollapsed = 0;
 let bagOfFigures = [];
 let isQuickDropActive = false;
 
-const PLAY_FIELD_MATRIX = generatePlayField(PLAY_FIELD_ROWS, PLAY_FIELD_COLUMS);
+const PLAY_FIELD_MATRIX = generateRenderField(
+  PLAY_FIELD_ROWS,
+  PLAY_FIELD_COLUMS,
+  ".playField"
+);
+const PREVIEW_MATRIX = generateRenderField(
+  PREVIEW_ROWS,
+  PREVIEW_COLUMS,
+  ".preview"
+);
+
+console.log(PREVIEW_MATRIX);
 
 let intervalId = undefined;
 
@@ -54,6 +67,14 @@ function play() {
     bagOfFigures.push(...generateBagOfFigures(FIGURE_NAMES));
     figurePoints = FIGURS_POINTS[bagOfFigures[0]];
   }
+
+  clearDynamicRender(PREVIEW_MATRIX);
+  renderFigure(
+    bagOfFigures[1],
+    FIGURS_POINTS[bagOfFigures[1]],
+    [0, 0],
+    PREVIEW_MATRIX
+  );
 
   const nextFigurePosition = calculateFigureCoords(figurePoints, [
     startDrawPoint[0] + 1,
@@ -187,6 +208,7 @@ function gameOver() {
 
   updateHtmlContent(".level > h2", 1);
   clearStaticRender(PLAY_FIELD_MATRIX);
+  clearDynamicRender(PREVIEW_MATRIX);
 
   if (localStorage.getItem("bestScore") < score) {
     localStorage.setItem("bestScore", score);
