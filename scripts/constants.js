@@ -1,5 +1,7 @@
 export const PLAY_FIELD_ROWS = 20;
 export const PLAY_FIELD_COLUMS = 10;
+export const PREVIEW_ROWS = 2;
+export const PREVIEW_COLUMS = 4;
 export const PLAY_FIELD_CENTER = [0, Math.floor(PLAY_FIELD_COLUMS / 2 - 1)];
 export const LEVEL_THRESHOLD = 5;
 
